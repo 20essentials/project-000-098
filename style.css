@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  background-color: black;
+  background-image: url('assets/new-pikachu.webp');
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  perspective: 1000px;
+  animation: alejar 6s linear infinite alternate both;
+  
+  &.pause {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes alejar {
+  0% {
+    background-size: 1400px;
+  }
+
+  100% {
+    background-size: 50px;
+  }
+}
+
+@keyframes alejarCel {
+  0% {
+    background-size: 1200px;
+  }
+
+  100% {
+    background-size: 10px;
+  }
+}
+
+@media (width <=1000px) {
+  body {
+    animation: alejarCel 6s linear infinite alternate both;
+  }
+}
